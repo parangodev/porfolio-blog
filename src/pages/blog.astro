@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+import BlogList from "../components/BlogList.astro"
+
+
+
+
+---
+<Layout
+  title="Blog de Parango"
+  description="Desarrollador backend y Devops con 10+ años de experiencia"
+>
+
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <h1 class="text-6xl font-bold">Blog</h1>
+      <p class="text-xl mt-16 mb-16">
+        En este blog encontrarás artículos sobre desarrollo web, DevOps y
+        tecnología en general.
+      </p>
+      <BlogList />
+      
+    </SectionContainer>
+    
+  </main>
+</Layout>

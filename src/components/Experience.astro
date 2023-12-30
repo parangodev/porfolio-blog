@@ -1,0 +1,46 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Actualmente...",
+    title: "Líder de ingeniería - Líder técnico / GetPulpo",
+    description:
+      "Dirigí el crecimiento de la plataforma de gestión de flotas GetPulpo, escalándola de cero a operar miles de vehículos. Desarrollé la arquitectura backend, APIs y front-end, garantizando su mantenimiento efectivo. Establecí procesos clave y lideré equipos hacia un rendimiento óptimo, asegurando escalabilidad y eficiencia en nuestras soluciones tecnológicas.",
+    link: "https://www.getpulpo.com/",
+  },
+  {
+    date: "Mayo 2021",
+    title: "Líder técnico  / LeanTech LeanSolution",
+    description:
+      "Lideré equipos multidisciplinarios en una organización de más de 300 personas, enfocándome en procesos técnicos y soporte eficiente. Como mentor, contribuí al desarrollo profesional del equipos. Realicé proyectos de TMS exitosos para clientes destacados, como FreightPros, mejorando significativamente sus operaciones logísticas.",
+  },
+  {
+    date: "Diciembre 2019",
+    title: "Líder datos - Lider Soporte técnico - Desarrollador fullstack / KometSales",
+    description:
+      "Dirigí la implementación de un proyecto de inteligencia de negocios para más de 100 empresas de importación y exportación de flores, mejorando significativamente sus operaciones. Implementé procesos de soporte eficaces, reduciendo casi totalmente los incidentes en la plataforma. Además, introduje nuevas funcionalidades para optimizar aún más el rendimiento y la eficiencia del sistema",
+  },
+  {
+    date: "Septiembre 2016",
+    title: "Desarrollador fullstack / Gestion System S.A.S",
+    description:
+      "Desarrollador fullstack",
+  },
+  {
+    date: "Septiembre 2015",
+    title: "Desarrollador fullstack / Servinformación",
+    description:
+      "Desarrollador fullstack",
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

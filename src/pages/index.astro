@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Badge from "../components/Badge.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import SocialPill from "../components/SocialPill.astro"
+import GitHubIcon from "../components/icons/GitHub.astro"
+import Twitter from "../components/icons/Twitter.astro"
+import Youtube from "../components/icons/Youtube.astro"
+import MailIcon from "../components/icons/Mail.astro"
+import Experience from "../components/Experience.astro"
+import BlogList from "../components/BlogList.astro"
+import Briefcase from "../components/icons/Briefcase.astro"
+import CodeIcon from "../components/icons/Code.astro"
+import Projects from "../components/Projects.astro"
+import Blog from "../components/icons/BlogHome.astro"
+
+---
+
+<Layout
+  title="Porfolio de Parango - Desarrollador backend y Devops con 10+ años de experiencia"
+  description="Desarrollador backend y Devops con 10+ años de experiencia"
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <img
+        class="rounded-full size-44 mb-4"
+        src="/perfil.jpeg"
+        alt="parango perfil photo"
+      />
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hola 👋, soy Parango <a
+          href="https://www.linkedin.com/in/pabloarangodev/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+        
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-balance max-w-[700px]">
+        <span>10+ experiencia como Desarrollador Backend. Habilidades en Cloud, SQL, Typescript y Python. 
+          Lidero productos innovadores en tecnología, enfocándome en soluciones eficientes y seguras.
+          </span>
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/pabloarangodev/">
+          <LinkedInIcon class="size-3 md:size-6" />
+           LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/parangodev">
+          <GitHubIcon class="size-3 md:size-6" />
+           GitHub
+        </SocialPill>
+        <SocialPill href="https://twitter.com/parangodev">
+          <Twitter class="size-3 md:size-6" />
+          Twitter
+        </SocialPill>
+        <SocialPill href="https://www.youtube.com/@ParangoDev">
+          <Youtube class="size-3 md:size-6" />
+          Youtube
+        </SocialPill>
+        <SocialPill href="mailto:pabloarangobte@gmail.com">
+          <MailIcon class="size-3 md:size-6" />
+          pabloarangobte@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-7" />
+         Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="blog">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Blog class="size-7" />
+         Últimos blogs
+      </h2> 
+      <BlogList />
+    </SectionContainer>
+
+   <SectionContainer id="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+         Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>
