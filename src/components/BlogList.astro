@@ -1,37 +1,40 @@
 ---
-import BlogItemList from "../components/BlogItemList.astro"
-const postList = await Astro.glob("../pages/post/*.md")
+import BlogItemList from "../components/BlogItemList.astro";
+import Calendar from "../components/icons/Calendar.astro";
+//const postList = await Astro.glob("../pages/post/*.md");
+const { posts } = Astro.props;
+const postList = posts
 ---
 
-<ul>
-    {
-        postList.map((post)=>(
-          <nav>
-          <BlogItemList class="py-34 pb-32">
-            <p class="text-[#9DB2BF]" >{post.frontmatter.pubDate.slice(0,10)}</p>
-            <a href={post.url}> 
-              <h2 class="text-white text-3xl md:text-4xl lg:text-3xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-5">{post.frontmatter.title}</h2>
-              <div class="flex gap-4 mt-2 flex-wrap">
-                  <p class="flex-1 text-balance">{post.frontmatter.description}</p>
-                  <img
-                    class="size-40 rounded shadow-2xl shadow-white/10 aspect-video"
-                    src={post.frontmatter.image.url}
-                    alt={post.frontmatter.image.alt}
-                  />
-              </div>
-            </a>{
-              post.frontmatter.tags.map((tag:string) => (
-                <a 
-                  href="#"
-                  class="text-white text-sm bg-gray-800 rounded-full px-4 py-2 mt-2 mr-2 inline-block transition
-                    hover:scale-110 hover:bg-white/10 "
-                >
-                  {tag}
-                </a>
-              ))
-            }
-          </BlogItemList>
-          </nav>
-        ))
-    }
-</ul>
+{
+  postList.map((post) => (
+    <BlogItemList class="">
+      <article>
+        <a href={post.url}>
+          <h3 class="text-lg font-bold">{post.frontmatter.title}</h3>
+          <div class="flex flex-row items-center space-x-4">
+            <span>
+              <Calendar class="size-3 md:size-6" />
+            </span>{" "}
+            <span class="text-[#9DB2BF text-sm">
+              {" "}
+              {post.frontmatter.pubDate.slice(0, 10)}
+            </span>
+          </div>
+          <div class="flex gap-4 mt-2 flex-wrap">
+            <p class="flex-1">{post.frontmatter.description}</p>
+          </div>
+        </a>
+        {post.frontmatter.tags.map((tag: string) => (
+          <a
+            href="#"
+            class="text-white text-sm bg-gray-800 rounded-full px-4 py-2 mt-2 mr-2 inline-block transition
+                hover:scale-110 hover:bg-white/10 "
+          >
+            {tag}
+          </a>
+        ))}
+      </article>
+    </BlogItemList>
+  ))
+}

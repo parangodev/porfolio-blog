@@ -1,11 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/LayoutBlog.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import BlogList from "../components/BlogList.astro"
+import SocialPill from "../components/SocialPill.astro"
+import GitHubIcon from "../components/icons/GitHub.astro"
+import Twitter from "../components/icons/Twitter.astro"
+import Youtube from "../components/icons/Youtube.astro"
+import MailIcon from "../components/icons/Mail.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import ArrowRigth from "../components/icons/ArrowRigth.astro"
 
-
-
-
+const postList = await Astro.glob("../pages/blog/*.md");
 ---
 <Layout
   title="Blog de Parango"
@@ -13,14 +18,40 @@ import BlogList from "../components/BlogList.astro"
 >
 
   <main class="px-4">
-    <SectionContainer class="py-44 pb-32">
-      <h1 class="text-6xl font-bold">Blog</h1>
-      <p class="text-xl mt-16 mb-16">
-        En este blog encontrarás artículos sobre desarrollo web, DevOps y
-        tecnología en general.
+    <SectionContainer class="py-1 pb-5">
+      <h1 class="text-5xl font-bold">Resumen</h1>
+      <p class="text-base mt-8 mb-2">
+        ¡Hola! Soy un entusiasta de la tecnología y este es mi blog, donde
+        comparto mi pasión por el desarrollo web y DevOps. Aquí encontrarás tips,
+        tendencias y herramientas para crecer en este emocionante campo. Desde
+        principiantes hasta expertos, todos son bienvenidos a aprender y explorar
+        juntos. ¡Únete a nosotros!
       </p>
-      <BlogList />
-      
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/pabloarangodev/">
+          <LinkedInIcon class="size-3 md:size-6" />
+        </SocialPill>
+        <SocialPill href="https://github.com/parangodev">
+          <GitHubIcon class="size-3 md:size-6" />
+        </SocialPill>
+        <SocialPill href="https://twitter.com/parangodev">
+          <Twitter class="size-3 md:size-6" />
+        </SocialPill>
+        <SocialPill href="https://www.youtube.com/@ParangoDev">
+          <Youtube class="size-3 md:size-6" />
+        </SocialPill>
+      </nav>
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"> 
+    </SectionContainer>
+    <SectionContainer class="pb-32">
+      <h2 class="text-3xl font-bold">Artículos</h2>
+      <BlogList posts={postList} />
+      <div class="flex items-center text-center align-middle justify-center">
+        <a href="" class="flex flex-row space-x-4"
+          >Más artículos
+          <ArrowRigth class="size-3 md:size-6" />
+        </a>
+      </div>
     </SectionContainer>
     
   </main>
