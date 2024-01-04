@@ -1,8 +1,10 @@
 ---
 import "@fontsource-variable/onest";
+import { ViewTransitions } from "astro:transitions";
 
 import Header from "../components/HeaderBlog.astro";
 import Footer from "../components/Footer.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 
 interface Props {
   title: string;
@@ -21,19 +23,21 @@ const { description, title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
 
-  <body class="relative">
+  <body class="relative flex flex-col min-h-max bg-primary">
     <div
       class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
     >
     </div>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
-
 <style is:global>
   :root {
     color-scheme: light dark;
@@ -42,13 +46,6 @@ const { description, title } = Astro.props;
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
     scroll-behavior: smooth;
-  }
-
-  body {
-    background: #27374d;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -22,17 +22,18 @@ const { description, title } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <body class="relative">
+  <body class="relative flex flex-col bg-primary min-h-max">
     <div
       class="absolute bottom-0 z-[-2] left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#DDE6ED,transparent)]"
     >
     </div>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
-
 <style is:global>
   :root {
     color-scheme: light dark;
@@ -41,13 +42,6 @@ const { description, title } = Astro.props;
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
     scroll-behavior: smooth;
-  }
-
-  body {
-    background: #27374d;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
   }
 
   @media (prefers-reduced-motion: reduce) {

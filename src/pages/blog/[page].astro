@@ -16,7 +16,6 @@ console.log(page.data);
   title="Blog de Parango"
   description="Desarrollador backend y Devops con 10+ años de experiencia"
 >
-  <main class="px-4">
     <SectionContainer class="pb-32">
       <div id="Breadcrumb" class="">
         <nav>
@@ -28,20 +27,19 @@ console.log(page.data);
               </a>
             </li>
             <li class="flex flex-row space-x-2">
-              <a class="flex flex-row space-x-2">
+              <a class="flex flex-row space-x-2 ">
                 <span>Artículos (Pagina #{page.currentPage})</span>
               </a>
             </li>
           </ol>
         </nav>
       </div>
-      <h2 class="text-3xl font-bold">Artículos</h2>
+      <h2 class="text-3xl font-bold text-secondary">Artículos</h2>
       <p>Todos los artículos que he escrito</p>
       <BlogList posts={page.data} />
-      <div class="flex items-center text-center align-middle justify-center">
+      <div class="flex items-center justify-center text-center align-middle">
         {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
         {page.url.next ? <a href={page.url.next}>Next</a> : null}
       </div>
     </SectionContainer>
-  </main>
 </Layout>

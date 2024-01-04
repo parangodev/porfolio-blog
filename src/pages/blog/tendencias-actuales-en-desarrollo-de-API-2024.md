@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/layoutPost.astro
+layout: ../../layouts/layoutBlog.astro
 pubDate: 2021-12-18
 title: "Tendencias Actuales en Desarrollo de API (2024)"
 description: "Una API es la forma principal de interacción para servicios complejos en el desarrollo de aplicaciones. Echemos un vistazo a las Tendencias en el Diseño de API."
