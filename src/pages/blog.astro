@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/LayoutBlog.astro";
+import { getCollection } from "astro:content";
 import SectionContainer from "../components/SectionContainer.astro";
 import BlogList from "../components/BlogList.astro";
 import SocialPill from "../components/SocialPill.astro";
@@ -10,7 +11,7 @@ import MailIcon from "../components/icons/Mail.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import ArrowRigth from "../components/icons/ArrowRigth.astro";
 
-const postList = await Astro.glob("../pages/blog/*.md");
+const postList  = await getCollection("blog");
 ---
 
 <Layout
