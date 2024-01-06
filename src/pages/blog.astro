@@ -11,7 +11,7 @@ import MailIcon from "../components/icons/Mail.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import ArrowRigth from "../components/icons/ArrowRigth.astro";
 
-const postList  = await getCollection("blog");
+//const postList  = await getCollection("blog");
 ---
 
 <Layout
@@ -45,7 +45,7 @@ const postList  = await getCollection("blog");
 </SectionContainer>
  
 
-  <SectionContainer class="pb-32">
+  <!-- <SectionContainer class="pb-32">
     <h2 class="text-3xl font-bold text-secondary">Artículos</h2>
     <BlogList posts={postList} />
     <div class="flex items-center justify-center text-center align-middle">
@@ -54,5 +54,5 @@ const postList  = await getCollection("blog");
         <ArrowRigth class="size-3 md:size-6" />
       </a>
     </div>
-  </SectionContainer>
+  </SectionContainer>-->
 </Layout>
