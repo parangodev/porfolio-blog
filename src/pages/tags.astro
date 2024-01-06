@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/LayoutBlog.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BlogList from "../components/BlogList.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import Twitter from "../components/icons/Twitter.astro";
+import Youtube from "../components/icons/Youtube.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import ArrowRigth from "../components/icons/ArrowRigth.astro";
+
+//const postList = await Astro.glob("../pages/blog/*.md");
+//const tagList = [
+ // ...new Set(postList.map((post) => post.frontmatter.tags).flat()),
+//];
+---
+<!--
+<Layout
+  title="Blog de Parango"
+  description="Desarrollador backend y Devops con 10+ años de experiencia"
+>
+  <main class="px-4">
+    <SectionContainer class="py-1 pb-5">
+      <div id="Breadcrumb" class="">
+        <nav>
+          <ol class="flex flex-wrap gap-2 text-sm">
+            <li class="flex flex-row space-x-2">
+              <a href="/blog" class="flex flex-row space-x-2">
+                <span>Inicio</span>
+                <ArrowRigth class="size-3 md:size-6" />
+              </a>
+            </li>
+            <li class="flex flex-row space-x-2">
+              <a class="flex flex-row space-x-2">
+                <span>Tags</span>
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <h1 class="text-5xl font-bold mt-2 mb-6">Tags</h1>
+      <p class="mt-2 mb-6">Listado de temas de los que escribo</p>
+      <nav>
+        <ul class="flex flex-wrap">
+          {
+            tagList.map((tag) => (
+              <li class="mr-2 mb-2">
+                <a
+                  href={`/blog/tags/${tag}`}
+                  class="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold text-gray-700 mr-2 mb-2"
+                >
+                  {tag}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </SectionContainer>
+  </main>
+</Layout> -->

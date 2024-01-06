@@ -1,17 +1,17 @@
 ---
 import Layout from "../layouts/LayoutBlog.astro";
-
+import { getCollection } from "astro:content";
 import SectionContainer from "../components/SectionContainer.astro";
-
+import BlogList from "../components/BlogList.astro";
 import SocialPill from "../components/SocialPill.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import Twitter from "../components/icons/Twitter.astro";
 import Youtube from "../components/icons/Youtube.astro";
-
+import MailIcon from "../components/icons/Mail.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import ArrowRigth from "../components/icons/ArrowRigth.astro";
 
-
-// const postList  = await getCollection("blog");
+const postList  = await getCollection("blog");
 ---
 
 <Layout
@@ -46,13 +46,13 @@ import LinkedInIcon from "../components/icons/LinkedIn.astro";
  
 
   <SectionContainer class="pb-32">
-   <!--  <h2 class="text-3xl font-bold text-secondary">Artículos</h2>
+    <h2 class="text-3xl font-bold text-secondary">Artículos</h2>
     <BlogList posts={postList} />
     <div class="flex items-center justify-center text-center align-middle">
       <a href="/blog/1" class="flex flex-row space-x-4 text-secondary"
         >Más artículos
         <ArrowRigth class="size-3 md:size-6" />
       </a>
-    </div>-->
+    </div>
   </SectionContainer>
 </Layout>
