@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/LayoutBlog.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import BlogList from "../../components/BlogList.astro";
+import ArrowRigth from "../../components/icons/ArrowRigth.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const postList: any = await Astro.glob("../blog/*.md");
+  return paginate(postList, { pageSize: 5 });
+}
+const { page } = Astro.props;
+console.log(page.data);
+---
+
+<Layout
+  title="Blog de Parango"
+  description="Desarrollador backend y Devops con 10+ años de experiencia"
+>
+    <SectionContainer class="pb-32">
+      <div id="Breadcrumb" class="">
+        <nav>
+          <ol class="flex flex-wrap gap-2 text-sm">
+            <li class="flex flex-row space-x-2">
+              <a href="/blog" class="flex flex-row space-x-2">
+                <span>Inicio</span>
+                <ArrowRigth class="size-3 md:size-6" />
+              </a>
+            </li>
+            <li class="flex flex-row space-x-2">
+              <a class="flex flex-row space-x-2 ">
+                <span>Artículos (Pagina #{page.currentPage})</span>
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <h2 class="text-3xl font-bold text-secondary">Artículos</h2>
+      <p>Todos los artículos que he escrito</p>
+      <BlogList posts={page.data} />
+      <div class="flex items-center justify-center text-center align-middle">
+        {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+        {page.url.next ? <a href={page.url.next}>Next</a> : null}
+      </div>
+    </SectionContainer>
+</Layout>

@@ -10,12 +10,12 @@ import MailIcon from "../components/icons/Mail.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import ArrowRigth from "../components/icons/ArrowRigth.astro";
 
-//const postList = await Astro.glob("../pages/blog/*.md");
-//const tagList = [
- // ...new Set(postList.map((post) => post.frontmatter.tags).flat()),
-//];
+const postList = await Astro.glob("../pages/blog/*.md");
+const tagList = [
+  ...new Set(postList.map((post) => post.frontmatter.tags).flat()),
+];
 ---
-<!--
+
 <Layout
   title="Blog de Parango"
   description="Desarrollador backend y Devops con 10+ años de experiencia"
@@ -59,4 +59,4 @@ import ArrowRigth from "../components/icons/ArrowRigth.astro";
       </nav>
     </SectionContainer>
   </main>
-</Layout> -->
+</Layout>
